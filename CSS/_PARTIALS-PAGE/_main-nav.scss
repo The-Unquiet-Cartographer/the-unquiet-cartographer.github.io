@@ -1,0 +1,19 @@
+@import "../_PARTIALS/borders-placeholders",
+        "../_PARTIALS/breakpoints";
+
+@import "../_PARTIALS/mix_flex-common-settings",
+        "../_PARTIALS/mix_ultimate-flex";
+
+.nav .flex-container{
+    @include flex-common-wrap;
+    @include flex-variable-basis-static-gutters (1);
+    @media (min-width: $bp-sm) {
+        @include flex-variable-basis-static-gutters (1 1);
+    }
+    @media (min-width: $bp-lg) {
+        @include flex-variable-basis-static-gutters (1 1 1);
+    }
+}
+.nav .flex-child {
+    border: $ph-border2; 
+}

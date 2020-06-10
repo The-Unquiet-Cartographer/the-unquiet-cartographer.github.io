@@ -30,7 +30,7 @@ h2 {
   margin: 5px auto;
 }
 
-@media (min-width: 660px) {
+@media (min-width: 768px) {
   body {
     width: 90%;
   }
@@ -40,7 +40,7 @@ h2 {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 992px) {
   .wSet-file {
     -ms-flex-preferred-size: calc(33% - 10px);
         flex-basis: calc(33% - 10px);
