@@ -1,0 +1,127 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: transparent;
+}
+
+body {
+  background: black;
+}
+
+h2, h3, h5 {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+li {
+  margin-top: 1px;
+  background: #ff861a;
+}
+
+li:empty {
+  background: grey;
+  color: grey;
+}
+
+.wSet-file {
+  color: white;
+  width: 100%;
+  padding-bottom: 1px;
+  border: 4px solid white;
+  border-radius: 8px;
+}
+
+.wSet-file h2, .wSet-file h3 {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.wSet-file table {
+  width: 100%;
+}
+
+.file-header {
+  line-height: 1.8em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #0499ff;
+}
+
+.weaponTable {
+  text-align: center;
+}
+
+.weaponTable td {
+  border: 1px solid yellow;
+}
+
+.h-list {
+  color: black;
+  margin: 5px 0;
+  padding-left: 25px;
+}
+
+.h-list * {
+  display: inline-block;
+  background: transparent;
+  margin: 0;
+}
+
+.h-list li:nth-of-type(1):before {
+  content: "1. ";
+  color: red;
+}
+
+.h-list li:nth-of-type(2):before {
+  content: "2. ";
+  color: red;
+}
+
+.h-list li:nth-of-type(3):before {
+  content: "3. ";
+  color: red;
+}
+
+.h-list li:nth-of-type(4):before {
+  content: "4. ";
+  color: red;
+}
+
+.h-list li:nth-of-type(5):before {
+  content: "5. ";
+  color: red;
+}
+
+.h-list li:nth-of-type(6):before {
+  content: "6. ";
+  color: red;
+}
+
+.h-list li:empty {
+  display: none;
+}
+
+.alt > :nth-child(2n+1) {
+  background: lightskyblue;
+}
+
+.alt > :nth-child(2n+2) {
+  background: lightblue;
+}
+
+.itemTable {
+  table-layout: fixed;
+  overflow-wrap: normal;
+}
+
+.hl {
+  background: limegreen;
+}
+
+.hl-strong {
+  background: green;
+}
+
+.hl-match {
+  background: #ffbf00;
+}
+/*# sourceMappingURL=customWeaponSets_V2.css.map */

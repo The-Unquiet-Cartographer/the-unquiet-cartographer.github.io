@@ -1,0 +1,152 @@
+@import "../_PARTIALS/colours",
+        "../_PARTIALS/func_divide-rem",
+        "../_PARTIALS/mix_clearfix", 
+        "../_PARTIALS/mix_has-nth";
+
+$color_border: white;
+
+
+////////////////////
+// General styles //
+////////////////////
+* {
+    box-sizing: border-box;
+    background:transparent;
+    color: white;
+}
+body {
+    background:black;
+}
+
+h2, h3, h5 {
+    font-family: "Trebuchet MS", sans-serif;
+}
+li {
+    margin-top:1px;
+    background: lighten($safety-orange, 5);
+    overflow:visible;
+}
+li:empty {
+    background:grey;
+    color: grey;
+}
+
+////////////////////
+// Section styles //
+////////////////////
+
+//Contains the most of the important level data,
+//split between the weapon table and item table.
+.wSet-file{
+   width: 50%;
+   float: left;
+   padding-bottom:1px;
+   border: 4px solid $color_border;
+   border-radius: 8px;
+   .file-header {
+        line-height: 1.8em;
+        padding-top:10px;
+        padding-bottom:10px;
+        background: $capri;
+   }
+   h2,h3 {
+       margin:0;
+       padding-left: 10px;
+   }
+   table {
+       width: 100%;
+   }
+}
+    //The recommended weapon set vs the featured
+    //custom set
+    .weaponTable {
+        text-align: center;
+        $main-column-width: 82%;   //or 88, so remainder is 24 or 12
+        td {
+            @for $i from 3 through 5 {
+                @include has-nth(n+$i, &) {
+                    width: divide-rem-pct($main-column-width, $i);
+                }
+            }
+            border:1px solid yellow;
+        }
+
+        /*  
+        .full-main {
+            width:$main-column-width;
+        }
+        .half-main {
+            $half-column-width:$main-column-width/2;
+            :nth-child(1n+1) {
+                width:$half-column-width;
+            }
+        }
+        */
+    }
+    //Health, Armor, and Powerups in the level
+    .itemTable {
+        table-layout: fixed;
+        overflow-wrap: normal;
+    }
+
+//Alternative weapon sets in a seperate table
+.altSets {
+    width: 50%;
+    float:right;
+    border:2px solid $color_border;
+    border-radius:8px;
+    h5 {
+        margin-top: 10px;
+        margin-bottom: 10px;    
+    }
+    ol {
+        border:1px solid $color_border;
+        display:inline-block;
+        margin:0;
+        padding-left:25px;
+        padding-bottom: 10px;
+    }
+    .tl, .bl {
+        width:50%;
+        float:left;
+    }
+    .tr, .br {
+        width:50%;
+        float:right;
+    }
+}
+
+//Highlight specific table and list entries
+.hl{
+    background:rgba(limegreen,127);
+}
+//Highlight choices in alt sets that match the 
+//recommended weapon set
+.hl-match{
+    background:rgba(#FFBF00,127);
+}
+
+//Clearfix
+section::after {
+    @include clearfix;
+}
+
+
+///////////////////
+// Media queries //
+///////////////////
+
+@media (max-width:855px) {
+    .wSet-file, .altSets {
+        float:none; width:100%;
+    }
+}
+@media (min-width:855px) {
+    body {
+        width: 80%;
+        margin: auto;
+    }
+    .wSet-file {
+        margin-top:35px;
+    }
+}

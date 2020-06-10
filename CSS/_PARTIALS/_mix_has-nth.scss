@@ -1,0 +1,22 @@
+@mixin has-nth($expression, $element: '*') {
+    &:nth-last-child(#{$expression}):first-child ~ #{$element},
+    &:nth-last-child(#{$expression}):first-child {
+      @content;
+    }
+  }
+
+  //Example:
+//  li {
+//    @include has-nth('n + 4', 'li') { //four or more
+      // your styling here 
+//    }
+//  }
+
+//Credit to Adam Giese @ CSS-tricks.com
+
+@mixin has-nth-V2($quantity, $element: '*') {
+  &:nth-last-child('n+#{$quantity}'):first-child ~ #{$element}, 
+  &:nth-last-child('n+#{$quantity}'):first-child {
+    @content;
+  }
+}

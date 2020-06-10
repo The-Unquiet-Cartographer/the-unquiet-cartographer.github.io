@@ -1,0 +1,147 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: transparent;
+  color: white;
+}
+
+body {
+  background: black;
+}
+
+h2, h3, h5 {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+li {
+  margin-top: 1px;
+  background: #ff861a;
+  overflow: visible;
+}
+
+li:empty {
+  background: grey;
+  color: grey;
+}
+
+.wSet-file {
+  width: 50%;
+  float: left;
+  padding-bottom: 1px;
+  border: 4px solid white;
+  border-radius: 8px;
+}
+
+.wSet-file .file-header {
+  line-height: 1.8em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #0499ff;
+}
+
+.wSet-file h2, .wSet-file h3 {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.wSet-file table {
+  width: 100%;
+}
+
+.weaponTable {
+  text-align: center;
+  /*  
+        .full-main {
+            width:$main-column-width;
+        }
+        .half-main {
+            $half-column-width:$main-column-width/2;
+            :nth-child(1n+1) {
+                width:$half-column-width;
+            }
+        }
+        */
+}
+
+.weaponTable td {
+  border: 1px solid yellow;
+}
+
+.weaponTable td:nth-last-child(n3):first-child ~ .weaponTable td, .weaponTable td:nth-last-child(n3):first-child {
+  width: 6%;
+}
+
+.weaponTable td:nth-last-child(n4):first-child ~ .weaponTable td, .weaponTable td:nth-last-child(n4):first-child {
+  width: 4.5%;
+}
+
+.weaponTable td:nth-last-child(n5):first-child ~ .weaponTable td, .weaponTable td:nth-last-child(n5):first-child {
+  width: 3.6%;
+}
+
+.itemTable {
+  table-layout: fixed;
+  overflow-wrap: normal;
+}
+
+.altSets {
+  width: 50%;
+  float: right;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+.altSets h5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.altSets ol {
+  border: 1px solid white;
+  display: inline-block;
+  margin: 0;
+  padding-left: 25px;
+  padding-bottom: 10px;
+}
+
+.altSets .tl, .altSets .bl {
+  width: 50%;
+  float: left;
+}
+
+.altSets .tr, .altSets .br {
+  width: 50%;
+  float: right;
+}
+
+.hl {
+  background: limegreen;
+}
+
+.hl-match {
+  background: #ffbf00;
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 855px) {
+  .wSet-file, .altSets {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media (min-width: 855px) {
+  body {
+    width: 80%;
+    margin: auto;
+  }
+  .wSet-file {
+    margin-top: 35px;
+  }
+}
+/*# sourceMappingURL=customWeaponSets.css.map */

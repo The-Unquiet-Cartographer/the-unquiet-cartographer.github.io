@@ -1,0 +1,18 @@
+/*To be used in conjunction with the style-pd.css*/
+
+/*Any empty table cells*/
+.weaponTable td:empty {
+    border:none;
+}
+/*Hide weapon quantities in "Start" row*/
+.weaponTable tr:nth-child(2) td:nth-child(1n+3) {
+    display:none;
+}
+/*Colorise vehicle names in the "Weapon" column*/
+.weaponTable tr:nth-child(1n+8) td:nth-child(2) {
+    color: white;
+}
+/*Hide unused tabledata cells in the Vehicle rows*/
+.weaponTable tr:nth-child(1n+8) td:nth-last-child(2n+3) {
+    border:none;
+}

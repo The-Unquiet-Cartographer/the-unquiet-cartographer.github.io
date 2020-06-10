@@ -1,0 +1,9 @@
+//.someParentClass {
+@mixin create-classes ($rangeMin:1, $rangeMax) {
+    @for $i from $rangeMin through $rangeMax {
+        .create-a-class-#{$i} {                          //create a class with called .create-a-class-$i 
+            background:transparent;
+        }
+    }
+}
+//}
