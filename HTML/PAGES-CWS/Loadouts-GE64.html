@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoldenEye 007 Recommended Weapon Sets</title>
-    <link rel="stylesheet" href="../CSS/STYLES-PAGE/customWeaponSets.css">
+    <link rel="stylesheet" href="../../CSS/STYLES-PAGE/customWeaponSets_V2.css">
+    <link rel="stylesheet" href="../../CSS/STYLES-LAYOUT/layout-flex.css">
+    <link rel="stylesheet" href="../../CSS/STYLES-GAME/style-GEX.css">
 </head>
 <header>
     <p>GoldenEye on N64 doesn't let you create custom weapon sets (GoldenEye X does!). However, certain weapon sets work better on certain levels, and the weapon sets in general can be grouped into four categories:
@@ -18,92 +20,58 @@
     <p>The weapon sets are listed below, and the level recommendations below that.</p>
 </header>
 <body>
-    <main>
-        <section>
-            <div class=wSet-file>
-                <div class="file-header">
-                    <h2>Level</h2>
-                    <h3>Set name</h3>
-                </div>
-                <table class=weaponTable>
-                    <tr>
-                        <td>1</td>
-                        <td>Weapon</td>
-                        <td>q1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Weapon</td>
-                        <td>q2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Weapon</td>
-                        <td>q3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Weapon</td>
-                        <td>q4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Weapon</td>
-                        <td>q5</td>
-                    </tr>
-                </table>
-                <table class=itemTable>
-                    <tr>
-                        <td>Health low</td>
-                        <td>Health hi</td>
-                        <td>Armour low</td>
-                        <td>Armour hi</td>
-                    </tr>
-                    <tr>
-                        <td>Max Damage</td>
-                        <td>Cloak</td>
-                        <td>Speed</td>
-                        <td>Shrink</td>
-                    </tr>
-                </table>
-            </div>
-            <div class = altSets>
-                <ol class = tl>
-                    <h5>Alt. 1</h5>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-                <ol class = tr>
-                    <h5>Alt. 2</h5>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-                <ol class = bl>
-                    <h5>Alt. 3</h5>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-                <ol class = br>
-                    <h5>Alt. 4</h5>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-        </section>
-        <hr>
-        
-    </main>
+
+<section class=flex-container>
+
+    <div class=wSet-file id="someLevel">
+        <div class=file-header>
+            <h2>someLevel</h2>
+            <h3></h3>
+        </div>
+        <table class=weaponTable>
+            <tr>
+                <th>#</th>
+                <th>Weapon</th>
+                <th>*#</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td></td>
+                <td>x2</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td></td>
+                <td>x2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+                <td>x2</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td></td>
+                <td>x2</td>
+            </tr>
+        </table>
+        <table class=itemTable>
+            <tr>
+                <td>Armour:</td>
+            </tr>
+        </table>
+        <div class=alt>
+            <ol class=h-list>
+                <h5>Alt</h5>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+
+</section>
+
 </body>
 </html>

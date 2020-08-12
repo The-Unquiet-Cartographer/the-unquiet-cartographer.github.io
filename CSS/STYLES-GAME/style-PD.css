@@ -28,7 +28,7 @@ h2 {
 }
 
 tr > td:nth-of-type(2) {
-  color: silver;
+  color: #b3b3b3;
 }
 
 tr > td:nth-of-type(2).hl, tr > td:nth-of-type(2).hl-strong {

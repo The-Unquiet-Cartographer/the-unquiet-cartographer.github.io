@@ -1,11 +1,11 @@
-@mixin flex-variable-basis-static-gutters ($ratios, $gutter-size: 20px) {
+@mixin flex-variable-basis-static-gutters ($ratios, $gutter-size_x: 20px, $gutter-size_y: 20px) {
     $len: length($ratios);
 
     $tot:0;
     @each $rat in $ratios {
         $tot: $tot + $rat;
     }
-    $ava: calc(100% - (#{$gutter-size} * (#{$len} - 1) ) );
+    $ava: calc(100% - (#{$gutter-size_x} * (#{$len} - 1) ) );
     $seg: #{$ava} / $tot;
     
     @for $i from 1 through $len {
@@ -13,6 +13,10 @@
             $n: nth($ratios, $i);
            flex-basis: calc(#{$n} * #{$seg}) ;
         }
+    }
+
+    :nth-child(#{$len}) ~ *{
+        margin-top: $gutter-size_y;
     }
 }
 

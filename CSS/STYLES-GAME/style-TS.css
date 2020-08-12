@@ -7,7 +7,7 @@ body {
 }
 
 h2 {
-  color: wheat;
+  color: lightskyblue;
 }
 
 .wSet-file {
@@ -20,32 +20,27 @@ h2 {
 }
 
 .file-header {
-  background: olive;
-}
-
-.fHeader-altColor {
-  background: darkred;
+  background: #0499ff;
 }
 
 .weaponTable td {
-  border-color: darkred;
+  border-color: yellow;
 }
 
-tr > td:nth-of-type(2) {
+tr > td:nth-of-type(2), tr > td:nth-of-type(3) {
   color: #b3b3b3;
 }
 
-tr > td:nth-of-type(2).hl, tr > td:nth-of-type(2).hl-strong {
+tr > td:nth-of-type(2).hl, tr > td:nth-of-type(2).hl-strong, tr > td:nth-of-type(2).hl-match,
+tr > td:nth-of-type(3).hl, tr > td:nth-of-type(3).hl-strong, tr > td:nth-of-type(3).hl-match {
   color: white;
 }
 
 .hl {
-  background: #17bf17;
   font-weight: 500;
 }
 
 .hl-strong {
-  background: #0f7f0f;
   font-weight: 600;
 }
 
@@ -104,10 +99,10 @@ tr > td:nth-of-type(2).hl, tr > td:nth-of-type(2).hl-strong {
 }
 
 .alt > :nth-child(2n+1) {
-  background: wheat;
+  background: lightskyblue;
 }
 
 .alt > :nth-child(2n+2) {
-  background: lightgoldenrodyellow;
+  background: lightblue;
 }
-/*# sourceMappingURL=style-GEX.css.map */
+/*# sourceMappingURL=style-TS.css.map */

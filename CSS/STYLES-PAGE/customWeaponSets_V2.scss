@@ -59,11 +59,6 @@ li:empty {
     //    $main-column-width: 82%;   //between 76 & 88, so remainder is 24 or 12
         td {
             border:1px solid yellow;
-    //      @for $i from 3 through 5 {
-    //          @include has-nth(n+$i, &) {
-    //              width: divide-rem-pct($main-column-width, $i);
-    //          }
-    //      }
         }
     }
     //New compact formatting for alt weapon sets
@@ -75,6 +70,9 @@ li:empty {
         > :nth-child(2n+2) {
             background: lightblue;
         }
+        h5:after {
+            content: ":";
+        }
     }
     //Health, Armor, and Powerups in the level
     .itemTable {
@@ -84,13 +82,13 @@ li:empty {
 
 //Highlight specific table and list entries
 .hl{
-    background:rgba(limegreen, 127);
+    background:rgba(limegreen, 128) !important;
 }
 .hl-strong {
-    background: green;
+    background: green !important;
 }
 //Highlight choices in alt sets that match the 
 //recommended weapon set
 .hl-match{
-    background:rgba(#FFBF00,127);
+    background:rgba(#FFBF00,128) !important;
 }

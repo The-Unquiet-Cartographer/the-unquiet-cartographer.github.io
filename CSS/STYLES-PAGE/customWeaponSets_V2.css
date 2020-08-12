@@ -108,20 +108,24 @@ li:empty {
   background: lightblue;
 }
 
+.alt h5:after {
+  content: ":";
+}
+
 .itemTable {
   table-layout: fixed;
   overflow-wrap: normal;
 }
 
 .hl {
-  background: limegreen;
+  background: limegreen !important;
 }
 
 .hl-strong {
-  background: green;
+  background: green !important;
 }
 
 .hl-match {
-  background: #ffbf00;
+  background: #ffbf00 !important;
 }
 /*# sourceMappingURL=customWeaponSets_V2.css.map */
