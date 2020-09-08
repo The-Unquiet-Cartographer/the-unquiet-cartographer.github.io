@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: black;
+}
+h1 {
+    color: lightcyan;
+}
+
+.flex-ctnr, .sub-ctnr, .star-ctnr {
+    display: flex;
+}
+
+.review-card {
+    border: solid navy 4px;
+    border-radius: 20px;
+    background-color: darkcyan;
+    color: white;
+    padding: 0 20px;
+
+    // Main container for star ratings 
+    .flex-ctnr {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        // Spans contain classes to control
+        // rating displays
+        span {
+            display: none;
+        }
+        // 4x containers for category/rating
+        .sub-ctnr {
+            flex-basis: 25%;
+            @media (max-width: 768px) {
+                flex-basis: 50%;
+            }
+        }
+    }
+    // 4x containers for category/rating
+    .sub-ctnr {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        border: solid grey 1px;
+        padding: 10px;
+        height: 50px;
+        h4 {
+            margin: 0;
+            width: 90px;
+            flex-basis: 90px;
+            text-align: center;
+        }
+    }
+    // Each sub-ctnr contains a star-ctnr 
+    // which holds 5x star icons
+    .star-ctnr {
+        width: 120px;
+        flex-basis: 120px;
+        height: 20px;
+        justify-content: space-evenly;
+        // Container for star icon variants
+        .img-ctnr {
+            flex-basis: 20px;
+            height: 20px;
+            position: relative;
+            >img {
+                height: 20px;
+                width: 20px;
+                position:absolute;
+                &:not(:first-child) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
+
+@import "../_PARTIALS-PAGE/review-star-ratings";

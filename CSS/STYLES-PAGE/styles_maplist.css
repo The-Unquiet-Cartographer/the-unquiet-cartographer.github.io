@@ -28,6 +28,11 @@ table td tr:nth-child(3) {
   background-color: #1fcf33;
 }
 
+.tdm::after {
+  content: "TDM";
+  background-color: red;
+}
+
 .duel::after {
   content: "1v1";
   background-color: #FFBF00;
@@ -58,6 +63,11 @@ table td tr:nth-child(3) {
   background-color: #b3b3b3;
 }
 
+.long::after {
+  content: "Long";
+  background-color: #b3b3b3;
+}
+
 .arena::after {
   content: "Arena";
   background-color: #b3b3b3;
@@ -72,4 +82,4 @@ table td tr:nth-child(3) {
   content: "Water";
   background-color: #006994;
 }
-/*# sourceMappingURL=maplist.css.map */
+/*# sourceMappingURL=styles_maplist.css.map */

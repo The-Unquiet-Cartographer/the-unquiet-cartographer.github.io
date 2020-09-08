@@ -30,6 +30,11 @@ table {
     content: "FFA";
     background-color: $green-1;
 }
+//Game modes
+.tdm::after {
+    content: "TDM";
+    background-color: red;
+}
 .duel::after {
     content:"1v1";
     background-color: $amber;
@@ -54,6 +59,10 @@ table {
 }
 .twobase::after {
     content: "Twobase";
+    background-color: $lighter-grey;
+}
+.long::after {
+    content: "Long";
     background-color: $lighter-grey;
 }
 .arena::after {

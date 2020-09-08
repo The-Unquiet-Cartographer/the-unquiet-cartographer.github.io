@@ -1,0 +1,28 @@
+@import "../_PARTIALS/colours", 
+        "../_PARTIALS/mix_h-lists";
+
+$dark-safety-orange:darken($safety-orange, 10);
+
+@mixin style-game($color-header, $color-1, $color-2, $color-data, $color-headerAlt:rgb(64,64,64)){
+
+    .file-header {
+        background: $color-header;
+    }
+    h2 {
+        color: $color-1;
+    }
+    .alt >:nth-child(2n+1) {
+        background: $color-1;
+    }
+    .alt >:nth-child(2n+2) {
+        background: $color-2;
+    }
+    .weaponTable td {
+        border-color: $color-data;
+    }
+    
+//Not all pages use this so it defaults to grey
+    .fHeader-altColor {
+        background: $color-headerAlt;
+    }
+}

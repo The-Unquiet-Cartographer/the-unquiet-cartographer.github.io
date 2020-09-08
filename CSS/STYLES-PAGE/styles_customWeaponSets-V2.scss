@@ -26,12 +26,32 @@ li:empty {
     color: grey;
 }
 
+
+//Horizontal list colors
+@include h-lists (darkred, rgb(48, 48, 48));
+.h-list h5 {
+    color:$dark-safety-orange;
+}
+.h-list li:before{
+    font-weight:bold;
+}
+
 ////////////////////
 // Section styles //
 ////////////////////
 
 //Contains most of the important level data,
 //split between the weapon table and item table.
+
+.null {
+    * {
+        background: transparent !important;
+        color: lightgrey !important;
+        td {
+            border:1px solid grey !important;
+        }
+    }
+}
 
 .wSet-file{
    color: white;
@@ -40,6 +60,7 @@ li:empty {
    border: 4px solid white;
    border-radius: 8px;
    h2,h3 {
+       color: white;
        margin:0;
        padding-left: 10px;
    }
@@ -47,11 +68,10 @@ li:empty {
        width: 100%;
    }
 }
-    .file-header {
+    .file-header, .file-header-alt {
         line-height: 1.8em;
         padding-top:10px;
         padding-bottom:10px;
-        background: $capri;
     }
     //The recommended weapon set vs the featured custom set
     .weaponTable {
@@ -60,9 +80,12 @@ li:empty {
         td {
             border:1px solid yellow;
         }
+        //Weapon table; non-highlighted text
+        tr > td:nth-of-type(2) {
+            color: $lightish-grey;
+        }
     }
     //New compact formatting for alt weapon sets
-    @include h-lists (red, black);    
     .alt {
         > :nth-child(2n+1) {
             background: lightskyblue;
@@ -80,12 +103,19 @@ li:empty {
         overflow-wrap: normal;
     }
 
+
+
+
+
 //Highlight specific table and list entries
 .hl{
     background:rgba(limegreen, 128) !important;
+    color:white !important;
 }
 .hl-strong {
     background: green !important;
+    color:white !important;
+    font-weight: 600;
 }
 //Highlight choices in alt sets that match the 
 //recommended weapon set
