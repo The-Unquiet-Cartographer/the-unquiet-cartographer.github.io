@@ -1,0 +1,92 @@
+$selectorPrefix: "&";
+@import "../../Star Rating System/ratings";
+@import "../../Star Rating System/starCtnr";
+
+
+//OVERWRITE
+$star-size: 16px;
+$ctnr-width: 96px;
+.star-ctnr {
+    width: $ctnr-width;
+    flex-basis: $ctnr-width;
+    height: $star-size;
+    // Container for star icon variants
+    .img-ctnr {
+        flex-basis: $star-size;
+        height: $star-size;
+        >img {
+            height: $star-size;
+            width: $star-size;
+        }
+    }
+}
+
+
+$rating-pad: calc((100% - 232px) / 2);
+
+* {
+    font-family: "Garamond", sans-serif;
+}
+
+.reviewCard {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: black solid 3px;
+    margin-top: 8px;
+}
+
+.info {
+    flex-basis: 33%;
+}
+
+.ratings {
+    flex-basis: 66%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    >* {flex-basis: 232px;}
+}
+.category {
+    min-width: 232px;
+    display: flex;
+    justify-content: space-between;
+    >* {
+        margin: 5px 0;
+    }
+    h4 {
+        padding-left: $rating-pad;
+    }
+    .star-ctnr {
+        padding-right: $rating-pad;
+    }
+}
+
+.review {
+    border-top: black solid 1px;
+    width: 100%;
+    h4 {
+        text-transform: uppercase;
+    }
+}
+
+
+
+
+//Additional colors by rating
+    //r-[1-5]: red = 255, green = [0-255]
+@for $i from 1 through 5 {
+    .r-#{$i} {
+        $red: 255;
+        $grn: $i * 51;
+        background-color: rgba($red, $grn, 0, 0.25);
+    }
+}
+    //r-[6-10]: red = [255-0], green = 255
+@for $i from 6 through 10 {
+    .r-#{$i} {
+        $red: 255 - (($i - 5) * 51);
+        $grn: 255;
+        background-color: rgba($red, $grn, 0, 0.25);
+    }
+}

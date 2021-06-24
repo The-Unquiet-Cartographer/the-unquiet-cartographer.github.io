@@ -3,7 +3,8 @@
         "../_PARTIALS/colours",
         "../_PARTIALS/padding";
 
-@import "../_PARTIALS-PAGE/main-nav";
+@import "../_PARTIALS/mix_flex-common-settings",
+        "../_PARTIALS/mix_flex-ultimate";
 
 * {
     box-sizing: border-box;
@@ -16,9 +17,9 @@ body {
     color: white;
 }
 a {
-    color: lightcyan;
+    color: lightskyblue;
     &:visited {
-        color: lightskyblue;
+        color: darken(darkgoldenrod, 5);
     }
 }
 header {
@@ -34,7 +35,7 @@ header {
         margin: 0;
     }
 }
-section {border: $ph-border1;}
+
 
 /*Large screen*/
 @media (min-width: $bp-sm) {
@@ -45,4 +46,20 @@ section {border: $ph-border1;}
         padding-top: $v-pad_some;
         padding-bottom: $v-pad_some;
     }
+}
+
+
+.main-nav, .featured-content {
+    border: $ph-border1;
+}
+.flex-container{
+    @include flex-common-wrap;
+    @include flex-variable-basis-static-gutters (1, 0px, 0px);
+    @media (min-width: $bp-lg) {
+        @include flex-variable-basis-static-gutters (1 1, 0px, 0px);
+    }
+}
+.content-block {
+    margin: 0;
+    border: $ph-border2; 
 }

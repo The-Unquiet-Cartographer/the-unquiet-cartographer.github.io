@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ctnr_ftSelector {
+            display: flex;
+            justify-content: flex-start;
+            margin: 15px 0;
+        }
+        #inp_filetype {
+            max-height: 20px;
+        }
+        #desc_filetype {
+            margin: 0;
+            padding-left: 10px;
+        }
+        #btn_processFile, #btn_downloadFile {
+            display: none;
+            padding: 16px;
+            border: solid grey 2px;
+            border-radius: 5px;
+            font-family: arial;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+        #btn_processFile {
+            background-color: lightblue;
+        }
+        #btn_downloadFile {
+            background-color: lightgreen;
+        }
+        h4, button {
+            margin: 15px 0;
+        }
+        #outputField {
+            margin: 15px 20px;
+            padding: 0 15px;
+            border: solid black 1px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h4>Select filetype of source file:</h4>
+        <div id=ctnr_ftSelector>
+            <select id=inp_filetype></select>
+            <p id=desc_filetype></p>
+        </div>
+        <div id=userInputs>
+            <input type=file id="inp_fileSelect" accept="text/plain, .3DO, .obj"/>
+            <label for="inp_sFactor">Scale Factor: </label>
+            <input type=number id="inp_sFactor"/>
+            <label for="inp_rounding">Round to nearest [x] unit(s): </label>
+            <input type=number id="inp_rounding"/>
+        </div>
+        <button id=btn_processFile>Process file</button>
+        <a id=btn_downloadFile>Download file</a>
+    </div>
+
+    <section id=outputField></section>
+
+    <script src=js_advanced_brushes/masterInput_v3.js></script>
+
+    <script src=js_basic_vertexOnly/process3DO.js></script>
+    <script src=js_basic_vertexOnly/processOBJ.js></script>
+    <script src=js_advanced_brushes/processOBJ_adv.js></script>
+
+    <script src=utilityFunctions.js></script>
+
+    <script src=js_basic_vertexOnly/output.js></script>
+</body>
+</html>

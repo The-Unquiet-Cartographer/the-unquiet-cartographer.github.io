@@ -1,0 +1,16 @@
+//VERY important that you define the $selectorPrefix and import the two partials in your master stylesheet.
+$selectorPrefix: "&";
+@import "ratings";
+@import "starCtnr";
+
+.category-1, .category-2, .etc {
+    width: 232px;
+    display: flex;
+    justify-content: space-between;
+    h4 {
+        text-transform: uppercase;
+    }
+    >* {
+        margin: 10px 0;
+    }
+}
