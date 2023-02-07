@@ -1,0 +1,147 @@
+/*
+*   The two-way switch exploits the checkbox:checked property to display one sibling element and hide the other.
+*   The checkbox covers one of two buttons. When it is checked, it moves position to cover the other button. This gives the illusion of seperate tabs.
+*/
+.tab {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 150px;
+  height: 35px;
+  border: solid black 1px;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+  line-height: 35px;
+}
+
+#btn-2WaySwitch {
+  display: inline;
+  position: absolute;
+  width: 150px;
+  height: 35px;
+  margin: 0;
+  left: calc(8px + 150px + 4px);
+  opacity: 0;
+}
+
+#btn-2WaySwitch:hover {
+  cursor: pointer;
+}
+
+#btn-2WaySwitch:checked {
+  left: 8px;
+}
+#btn-2WaySwitch:checked ~ #tab-obj2map {
+  background-color: grey;
+}
+#btn-2WaySwitch:checked ~ #tab-map2obj {
+  background-color: white;
+}
+#btn-2WaySwitch:checked ~ #obj2map {
+  display: none;
+}
+#btn-2WaySwitch:checked ~ #map2obj {
+  display: block;
+}
+#btn-2WaySwitch:checked ~ #notes-obj2map {
+  display: none;
+}
+#btn-2WaySwitch:checked ~ #notes-map2obj {
+  display: block;
+}
+
+#tab-obj2map {
+  background-color: white;
+}
+
+#tab-map2obj {
+  background-color: grey;
+}
+
+#obj2map {
+  display: block;
+}
+
+#map2obj {
+  display: none;
+}
+
+#notes-obj2map {
+  display: block;
+}
+
+#notes-map2obj {
+  display: none;
+}
+
+.linebreak {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.ctnr-userVars {
+  max-width: 900px;
+  margin-top: 8px;
+}
+.ctnr-userVars label {
+  display: inline-block;
+  width: 260px;
+}
+.ctnr-userVars .elmt-userVars {
+  height: 22px;
+}
+.ctnr-userVars .btn_selectFile {
+  margin-top: 8px;
+}
+@media (min-width: calc(8px * 2 + 450px * 2)) {
+  .ctnr-userVars > .column-l, .ctnr-userVars .column-r {
+    display: inline;
+    width: 450px;
+  }
+  .ctnr-userVars > .column-l {
+    float: left;
+  }
+  .ctnr-userVars > .column-r {
+    float: right;
+  }
+}
+
+.btn_processFile, .btn_downloadFile {
+  display: none;
+  padding: 16px;
+  border: solid grey 2px;
+  border-radius: 5px;
+  font-family: arial;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.btn_processFile {
+  background-color: lightblue;
+}
+
+.btn_downloadFile {
+  background-color: lightgreen;
+}
+
+h4, button {
+  margin: 15px 0;
+}
+
+#outputField {
+  margin: 15px 20px;
+  padding: 0 15px;
+  border: solid black 1px;
+  border-radius: 5px;
+}
+
+th {
+  width: 200px;
+}
+
+#notes-map2obj td {
+  text-align: center;
+}/*# sourceMappingURL=styles.css.map */

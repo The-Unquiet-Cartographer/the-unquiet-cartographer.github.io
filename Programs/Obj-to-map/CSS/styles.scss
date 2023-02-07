@@ -1,0 +1,108 @@
+//Switch tabs
+/*
+*   The two-way switch exploits the checkbox:checked property to display one sibling element and hide the other.
+*   The checkbox covers one of two buttons. When it is checked, it moves position to cover the other button. This gives the illusion of seperate tabs.
+*/
+    $margin-body: 8px;
+    $hght-tab: 35px;
+    $wdth-tab: 150px;
+    .tab {
+        display: inline-block;
+        box-sizing: border-box;
+        width: $wdth-tab;
+        height: $hght-tab;
+        border: solid black 1px;
+        border-bottom: none;
+        border-radius: 4px 4px 0 0;
+        text-align: center;
+        line-height: $hght-tab;
+    }
+    #btn-2WaySwitch {
+        display: inline;
+        position: absolute;
+        width: $wdth-tab;
+        height: $hght-tab;
+        margin: 0;
+        left: calc(#{$margin-body} + #{$wdth-tab} + 4px);
+        opacity: 0;
+    }
+    #btn-2WaySwitch:hover {
+        cursor: pointer;
+    }
+    #btn-2WaySwitch:checked {
+        & ~ #tab-obj2map {background-color: grey;}
+        & ~ #tab-map2obj {background-color: white;}
+        & ~ #obj2map {display: none;}
+        & ~ #map2obj {display: block;}
+        & ~ #notes-obj2map {display: none;}
+        & ~ #notes-map2obj {display: block;}
+        left: $margin-body;
+    }
+    #tab-obj2map {background-color: white;}
+    #tab-map2obj {background-color: grey;}
+    #obj2map {display: block}
+    #map2obj {display: none}
+    #notes-obj2map {display: block;}
+    #notes-map2obj {display: none;}
+
+    .linebreak {
+        width: 100%;
+        height: 1px;
+        background-color: black;
+    }
+
+
+//Float user input columns
+    $wdth-clmn: 450px;
+    .ctnr-userVars {
+        max-width: $wdth-clmn * 2;
+        margin-top: 8px;
+        label {
+                display: inline-block;
+                width: 260px;
+        }
+        .elmt-userVars { height: 22px; }
+        .btn_selectFile { margin-top: 8px; }
+        @media (min-width: calc(#{$margin-body} * 2 + #{$wdth-clmn} * 2)) {
+            >.column-l, .column-r {
+                display: inline;
+                width: $wdth-clmn;
+            }
+            >.column-l {
+                float: left;
+            }
+            >.column-r {
+                float: right;
+            }
+        }
+    }
+    .btn_processFile, .btn_downloadFile {
+        display: none;
+        padding: 16px;
+        border: solid grey 2px;
+        border-radius: 5px;
+        font-family: arial;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+    .btn_processFile {
+        background-color: lightblue;
+    }
+    .btn_downloadFile {
+        background-color: lightgreen;
+    }
+
+    h4, button {
+        margin: 15px 0;
+    }
+    #outputField {
+        margin: 15px 20px;
+        padding: 0 15px;
+        border: solid black 1px;
+        border-radius: 5px;
+    }
+
+    th {width: 200px}
+    #notes-map2obj td {text-align: center;}

@@ -1,0 +1,27 @@
+@mixin h-lists($item-spacing: 10px) {
+    $_item-spacing: calc(#{$item-spacing} / 2);
+    .h-list {
+        margin: 5px 0;
+        padding-left:25px;
+        >*{
+            display: inline-block;
+            background: transparent;
+            &:not(:first-child){
+                margin-left: $_item-spacing; 
+            }
+            &:not(:last-child){
+                margin-right: $_item-spacing; 
+            }
+        }
+        @content;
+    }
+}
+
+@mixin h-list_markers ($number-of-markers) {
+    @for $i from 1 through $number-of-markers {
+        .h-list li:nth-of-type(#{$i}):before {
+            content: "#{$i}. ";
+            @content;
+        }
+    }
+}

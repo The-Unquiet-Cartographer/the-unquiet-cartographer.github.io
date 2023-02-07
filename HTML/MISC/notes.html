@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:black;
+        }
+        h3, h4, strong {
+            color:white;
+        }
+        li {
+            color:#CCCCCC;
+        }
+        section {
+            border:solid white 1px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section id="Q2_CreateTexture">
+        <h3>Create a new texture for Quake 2</h3>
+        <li>In <strong>Wally</strong>, import your source image as an <a href="#Bitmap_8Bit">8-bit indexed bitmap</a> using the Quake 2 palette. <strong>This is important.</strong> You have to actually import a file that uses the correct color information, otherwise the exported file will be wrong.
+        <li>Go File -> Export... Change the file format to "Quake2 Texture (*.wal)" and click 'Save'.</li>
+    </section>
+
+    <section id="Bitmap_8Bit">
+        <h3>Create an 8-bit indexed (paletted) bitmap</h3>
+        <li>Depending on what game you are editing, you may be required to provide textures as 8-bit paletted bitmaps.</li>
+        <li>Use a 32-bit <strong>.PNG</strong> for your source image - that's what these tutorials are based around:</li>
+
+        <h4>If your source image has &gt; 16 colours:</h4>
+        <li>In <strong>GIMP</strong>, import your source image.</li>
+        <li>Go to Image -> Mode -> Indexed... You can either have GIMP generate a palette or <a href="#GIMP_ImportPalette">import a custom palette</a> (some games, like Quake 1 & 2, have a fixed 256-color palette that all textures share). Click 'Convert'.</li>
+        <li>Click File -> Export As... Change the file format to "Windows Bitmap (*.bmp)" and click 'Export'.</li>
+        <li><strong>Important:</strong> Under 'Compatibility Options', check "Do not write color space information". Click 'Export'.</li>
+
+        <h4>If your source image has &lt;= 16 colours:</h4>
+        <li><strong>GIMP</strong> won't work, because you cannot force it to export a bitmap with more colour information than is required.</li>
+        <li>Using <strong>Wally</strong>, import your source image.</li>
+        <li>Optionally, change the color palette to one you require (e.g. Quake 2).</li>
+        <li>Click File -> Export... and select Windows Bitmap (*.bmp) as the file format. Wally will automatically export it as an 8-bit bitmap.</strong></li>
+    </section>
+
+    <section id="GIMP_ImportPalette">
+        <h3>Import a color palette to GIMP</h3>
+        <li>Because it's not obvious...</li>
+        <li>Go to Windows -> Dockable Dialogues -> Palettes. Right click on the list and select 'Import Palette...'.</li>
+    </section>
+</body>
+</html>

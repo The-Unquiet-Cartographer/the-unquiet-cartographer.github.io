@@ -1,0 +1,99 @@
+//General settings
+    $margin-body: 8px;
+    body {background: grey; margin: $margin-body}
+    * {box-sizing: border-box}
+    table, .ratings {border: solid black 4px; display: inline-block; background: lightgrey}
+
+    $selectorPrefix: "&";
+    @import "../../../Star Rating System/ratings";
+    @import "../../../Star Rating System/starCtnr";
+
+
+//Review card (contains map info, ratings, and review)
+    .card {margin-bottom: 1.5em; display: inline-block}
+
+
+//Highlight cards
+    .s {box-shadow: 0 0 4px 4px gold}
+    .a {box-shadow: 0 0 2px 4px limegreen}
+    .b {box-shadow: 0 0 1px 3px greenyellow}
+
+
+//Info table, i.e. name, author, etc
+    .info {
+        th, td {min-width: 200px; text-align: center; padding: 1px 4px}
+        th {border: solid black 2px}
+        td {border: solid black 1px}
+        th:first-of-type, td:first-of-type {min-width: 80px}
+        th:last-of-type, td:last-of-type {min-width: 120px}    
+    }
+
+
+//Ratings "table"
+    .Layout >:first-child::before {content: "Layout"}
+    .Construction >:first-child::before {content: "Construction"}
+    .Aesthetics >:first-child::before {content: "Aesthetics"}
+    .Entities >:first-child::before {content: "Entities"}
+    .Aggregate >:first-child::before {content: "Aggregate"}
+    .Personal >:first-child::before {content: "Personal"}
+
+    $margin-vert: 1px;
+    $margin-horz: 1px;
+    $header-width: 100px;
+    $rating-width: 120px;
+    $border-horz-l: 4px;
+
+    $wdth-3: calc(#{$margin-horz}*2*6 + #{$header-width}*3 + #{$rating-width}*3 + #{$border-horz-l}*2);
+    $wdth-2: calc(#{$margin-horz}*2*4 + #{$header-width}*2 + #{$rating-width}*2 + #{$border-horz-l}*2);
+
+    .ratings {
+        flex-basis: $wdth-3;
+        width: $wdth-3;
+        @media (max-width: calc(#{$wdth-3} + #{$margin-body}*2)) {
+            flex-basis: $wdth-2;
+            width: $wdth-2;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        .category {
+            display: flex;
+            h4, .star-ctnr {
+                box-sizing: border-box;
+                margin: $margin-vert $margin-horz;
+                padding: 1px;
+            }
+            h4 {
+                border: solid black 2px;
+                width: 100px;
+            }
+            .star-ctnr {
+                border: solid black 1px;
+                width: $rating-width;
+                flex-basis: $rating-width;
+                height: calc(100% - (#{$margin-vert} * 2));
+            }
+        }
+    }
+
+
+//Additionally colorise star rating elements depending on the rating (.r-#) 
+//r-[1-5]: red = 255, green = [0-255]
+    @for $i from 1 through 5 {
+        .r-#{$i} .star-ctnr {
+            $red: 255;
+            $grn: $i * 51;
+            background-color: rgba($red, $grn, 48, 0.375);
+        }
+    }
+        //r-[6-10]: red = [255-0], green = 255
+    @for $i from 6 through 10 {
+        .r-#{$i} .star-ctnr {
+            $red: 255 - (($i - 5) * 51);
+            $grn: 255;
+            background-color: rgba($red, $grn, 48, 0.375);
+        }
+    }
+
+
+//Review
+    p {margin: 0.5em 0 0; max-width: 888px; padding-left: 2px; background: #bbb}

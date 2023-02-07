@@ -1,0 +1,4 @@
+@function divide-rem-pct ($subtrahend, $portions) {
+    $rem:100%-$subtrahend;
+    @return($rem/$portions);
+}

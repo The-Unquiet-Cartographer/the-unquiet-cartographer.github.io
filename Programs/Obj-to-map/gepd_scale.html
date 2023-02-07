@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hl {background-color: limegreen}
+        td{text-align: center}
+        th{text-align: center}
+        th:nth-of-type(1){text-align: left}
+    </style>
+</head>
+<body>
+    Divisor = [Sample measurement] / [Desired measurement] <br>
+    Therefore: Desired = Sample / Divisor <br>
+    Therefore: Scalar = 1 / Divisor <br>
+    <br>
+    Scalar = (1 / [Sample measurement] / [Desired measurement]) <br>
+    Therefore: Desired = Sample * Scalar <br>
+    However, the scalar has a chance of being a number with infinite decimal places, so the divisor may be preferable. <br>
+
+    <h3>GoldenEye 007</h3>
+    <table>
+        <tr><th>Level</th><th>Sample Width x Height</th><th>Desired Width x Height</th><th>Scalar</th><th>Divisor</th><th>Notes</th></tr>
+        <tr class=hl>   <th>Complex</th> <td>114 x 227</td>  <td>48 x 96</td>  <td>~0.421 x ~0.423</td> <td>2.375</td>   </tr>
+        <tr>            <th>Complex</th> <td>114 x 227</td>  <td>64 x 128</td> <td>~0.561 x ~0.564</td> <td>1.78125</td> </tr>
+        <P> ARCHIVES: 1 FLOOR TILE IS 54/2 (big), 38/3.3 or 54/4 (small). DOOR WIDTH IS 54.
+    </table>
+
+    <h3>Perfect Dark</h3>
+    <table>    
+        <tr><th>Level</th><th>Sample Width x Height</th><th>Desired Width x Height</th><th>Scalar</th><th>Divisor</th><th>Notes</th></tr>
+
+        <tr>            <th>Skedar</th> <td>350 x 300</td>  <td>112 x 96</td>   <td>0.32</td>   <td>3.125</td>      </tr>
+        <tr>            <th>Skedar</th> <td>350 x 300</td>  <td>126 x 108</td>  <td>0.36</td>   <td>2.77...</td>    </tr>
+        <tr class=hl>   <th>Skedar</th> <td>350 x 300</td>  <td>140 x 120</td>  <td>0.4</td>    <td>2.5</td>        </tr>
+        <tr>            <th>Skedar</th> <td>350 x 300</td>  <td>147 x 126</td>  <td>0.42</td>   <td>~2.381</td>     </tr>
+        <tr>            <th>Skedar</th> <td>350 x 300</td>  <td>168 x 144</td>  <td>0.48</td>   <td>2.0833...</td>  </tr>
+
+        <tr class=hl>   <th>Complex</th> <td>118 x 236</td>  <td>48 x 96</td>  <td>0.4067796610169492</td>   </tr>
+        <tr>            <th>Complex</th> <td>118 x 236</td>  <td>64 x 128</td> <td>0.5423728813559322</td>   </tr>
+
+        <tr>            <th>Villa</th> <td>200 x N/A</td>  <td>64</td>  <td>0.32</td>  <td></td><td>One floor tile is 16 units (Aim)  </tr>
+        <tr>            <th>Villa</th> <td>200 x N/A</td>  <td>80</td>  <td>0.4</td>  <td></td></tr>
+        <tr>            <th>Villa</th> <td>200 x N/A</td>  <td>96</td>  <td>0.48</td>  <td></td><td>One floor tile is 24 units (Aim)</td>     </tr>
+        <tr>            <th>Villa</th> <td>200 x N/A</td>  <td>120</td> <td>0.6</td>  <td></td><td>One floor tile is 50 units (1:1)</td>    </tr>
+        <tr>            <th>Villa</th> <td>200 x N/A</td>  <td>160</td> <td>0.8</td>   <td></td></tr>
+
+    </table>
+</body>
+</html>

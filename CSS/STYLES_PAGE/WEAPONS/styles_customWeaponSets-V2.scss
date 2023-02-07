@@ -1,0 +1,157 @@
+////////////////////
+// General styles //
+////////////////////
+
+    @import "../../_PARTIALS/colours",
+            "../../_PARTIALS/func_divide-rem",
+            "../../_PARTIALS/mix_h-lists", 
+            "../../_PARTIALS/mix_has-nth";
+
+    $hdr-pad: 10px;
+
+    * {
+        box-sizing: border-box;
+        background:transparent;
+    }
+    body {
+        background:black;
+    }
+
+    h2, h3, h4, h5 {
+        font-family: "Trebuchet MS", sans-serif;
+        color: white;
+    }
+    li {
+        color: white;
+    }
+
+//Horizontal list colors
+    @include h-lists ($dark-safety-orange, darkred, rgb(48, 48, 48));
+
+
+////////////////////
+// Section styles //
+////////////////////
+
+//FILE containing recommended weapon set
+    .wSet-file{
+        color: white;
+        width: 100%;
+        padding-bottom:1px;
+        border: 4px solid white;
+        border-radius: 8px;
+        h2,h3,h4 {
+            color: white;
+            margin:0;
+            padding-left: $hdr-pad;
+        }
+        table {
+            width: 100%;
+        }
+        p {
+            &:before {
+                content:"\2022";
+                padding: 0 4px;
+            }
+        }
+    }
+    .file-header, .file-header-alt {
+        line-height: 1.8em;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .weaponTable {
+        text-align: center;
+        table-layout: fixed;
+        overflow: hidden;
+        td {
+            border:1px solid yellow;
+        }
+    
+    //Non-highlighted text
+        tr {
+            > td:nth-of-type(2) {
+                color: $lightish-grey;
+            }
+            > :first-child, > :last-child {
+                width: 30px;
+            }
+        }
+    }
+
+//New compact formatting for alt weapon sets
+    .alt {
+        > :nth-child(2n+1) {
+            background: lightskyblue;
+        }
+        > :nth-child(2n+2) {
+            background: lightblue;
+        }
+        h5:after {
+            content: ":";
+        }
+    }
+
+//Health, Armor, and Powerups in the level
+    .itemTable {
+        table-layout: fixed;
+        overflow-wrap: normal;
+    }
+
+
+//////////////////
+// HIGHLIGHTING //
+//////////////////
+
+//Use this class to forcibly de-highlight/de-emphasise a section
+    .null {
+        * {
+            background: transparent !important;
+            color: lightgrey !important;
+            td {
+                border:1px solid grey !important;
+            }
+        }
+    }
+
+//Highlight specific list entries
+    .hl-weak{
+        background:#84fb84 !important;
+        color:white !important;
+    }
+    .hl{
+        background:limegreen !important;
+        color:white !important;
+    }
+    .hl-strong {
+        background:green !important;
+        color:white !important;
+        font-weight: 600;
+    }
+    .hl-match{
+        background:rgba(#FFBF00,128) !important;
+    }
+
+//Add a span to the file header with this class to add a checkmark. Useful for noting which sets are "complete".
+    .mark {
+        float:right;
+        height: 25px;
+        width: 25px;
+        margin-top: 2px;
+        margin-right: 15px;
+        border: 2px solid white;
+        box-sizing: border-box;
+        border-radius: 2px;
+        text-align: center;
+        line-height: 24px;
+        font-weight: normal !important;
+        &:after {content: "\2713";}
+    }
+//Alternatively, add this class to a header or paragraph tag to add a simple tick on the right-hand side.
+    .tick {
+        &:after {
+            content: "\2713";
+            float: right;
+            margin-right: 12px;
+        }
+    }

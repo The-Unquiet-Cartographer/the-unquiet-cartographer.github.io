@@ -1,0 +1,102 @@
+.r-1 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(2) {
+  display: initial;
+}
+
+.r-2 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3), .r-3 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3) {
+  display: initial;
+}
+
+.r-3 + * .star-ctnr .img-ctnr:nth-child(2) img:nth-child(2) {
+  display: initial;
+}
+
+.r-4 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3), .r-5 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3) {
+  display: initial;
+}
+.r-4 + * .star-ctnr .img-ctnr:nth-child(2) img:nth-child(3), .r-5 + * .star-ctnr .img-ctnr:nth-child(2) img:nth-child(3) {
+  display: initial;
+}
+
+.r-5 + * .star-ctnr .img-ctnr:nth-child(3) img:nth-child(2) {
+  display: initial;
+}
+
+.r-6 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3), .r-7 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3) {
+  display: initial;
+}
+.r-6 + * .star-ctnr .img-ctnr:nth-child(2) img:nth-child(3), .r-7 + * .star-ctnr .img-ctnr:nth-child(2) img:nth-child(3) {
+  display: initial;
+}
+.r-6 + * .star-ctnr .img-ctnr:nth-child(3) img:nth-child(3), .r-7 + * .star-ctnr .img-ctnr:nth-child(3) img:nth-child(3) {
+  display: initial;
+}
+
+.r-7 + * .star-ctnr .img-ctnr:nth-child(4) img:nth-child(2) {
+  display: initial;
+}
+
+.r-8 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3), .r-9 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3) {
+  display: initial;
+}
+.r-8 + * .star-ctnr .img-ctnr:nth-child(2) img:nth-child(3), .r-9 + * .star-ctnr .img-ctnr:nth-child(2) img:nth-child(3) {
+  display: initial;
+}
+.r-8 + * .star-ctnr .img-ctnr:nth-child(3) img:nth-child(3), .r-9 + * .star-ctnr .img-ctnr:nth-child(3) img:nth-child(3) {
+  display: initial;
+}
+.r-8 + * .star-ctnr .img-ctnr:nth-child(4) img:nth-child(3), .r-9 + * .star-ctnr .img-ctnr:nth-child(4) img:nth-child(3) {
+  display: initial;
+}
+
+.r-9 + * .star-ctnr .img-ctnr:nth-child(5) img:nth-child(2) {
+  display: initial;
+}
+
+.r-10 + * .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3) {
+  display: initial;
+}
+.r-10 + * .star-ctnr .img-ctnr:nth-child(2) img:nth-child(3) {
+  display: initial;
+}
+.r-10 + * .star-ctnr .img-ctnr:nth-child(3) img:nth-child(3) {
+  display: initial;
+}
+.r-10 + * .star-ctnr .img-ctnr:nth-child(4) img:nth-child(3) {
+  display: initial;
+}
+.r-10 + * .star-ctnr .img-ctnr:nth-child(5) img:nth-child(3) {
+  display: initial;
+}
+
+.star-ctnr {
+  display: flex;
+  width: 120px;
+  flex-basis: 120px;
+  height: 20px;
+  justify-content: space-evenly;
+}
+.star-ctnr .img-ctnr {
+  flex-basis: 20px;
+  height: 20px;
+  position: relative;
+}
+.star-ctnr .img-ctnr > img {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+}
+.star-ctnr .img-ctnr > img:not(:first-child) {
+  display: none;
+}
+
+.parent-ctnr {
+  width: 232px;
+  display: flex;
+  justify-content: space-between;
+}
+.parent-ctnr h4 {
+  text-transform: uppercase;
+}
+.parent-ctnr > * {
+  margin: 10px 0;
+}/*# sourceMappingURL=example.css.map */

@@ -1,0 +1,31 @@
+body {
+  width: 100%;
+  margin: auto;
+}
+
+.wSet-file {
+  margin: 5px;
+}
+
+@media (min-width: 768px) {
+  .wSet-file {
+    width: calc(50% - 10px);
+  }
+  body {
+    width: 90%;
+  }
+  body, .float-container {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .float-container > :nth-child(odd), body > .wSet-file:nth-of-type(odd) {
+    float: left;
+  }
+  .float-container > :nth-child(even), body > .wSet-file:nth-of-type(even) {
+    float: right;
+  }
+}
+.float-container {
+  width: 100%;
+}/*# sourceMappingURL=layout-float.css.map */

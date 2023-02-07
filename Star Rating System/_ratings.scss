@@ -1,0 +1,67 @@
+//1-Star
+.r-1 {
+    #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(1) img:nth-child(2) {
+        display: initial;
+    }
+}
+.r-2, .r-3 {
+    #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(1) img:nth-child(3) {
+        display: initial;
+    }
+}
+
+//2-Star
+.r-3 {
+    #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(2) img:nth-child(2) {
+        display: initial;
+    }
+}
+.r-4, .r-5 {
+    @for $i from 1 through 2 {
+        #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(#{$i}) img:nth-child(3) {
+            display: initial;
+        }
+    }
+}
+
+//3-star
+.r-5 {
+    #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(3) img:nth-child(2) {
+        display: initial;
+    }
+}
+.r-6, .r-7 {
+    @for $i from 1 through 3 {
+        #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(#{$i}) img:nth-child(3) {
+            display: initial;
+        }
+    }
+}
+
+//4-star
+.r-7 {
+    #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(4) img:nth-child(2) {
+        display: initial;
+    }
+}
+.r-8, .r-9 {
+    @for $i from 1 through 4 {
+        #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(#{$i}) img:nth-child(3) {
+            display: initial;
+        }
+    }
+}
+
+//5-star
+.r-9 {
+    #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(5) img:nth-child(2) {
+        display: initial;
+    }
+}
+.r-10 {
+    @for $i from 1 through 5 {
+        #{$selectorPrefix} .star-ctnr .img-ctnr:nth-child(#{$i}) img:nth-child(3) {
+            display: initial;
+        }
+    }
+}

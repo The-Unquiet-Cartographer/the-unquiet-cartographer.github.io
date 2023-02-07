@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .srcImage {
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" class="btn_chooseImage" id="inp_chooseImage"/>
+
+    <script>
+        const sliceIncrX = 64;
+        const sliceIncrY = 64;
+
+        const inp_chooseImage = document.getElementById("inp_chooseImage");
+    //Event listener for image upload
+        inp_chooseImage.addEventListener("change", (e) => {
+            const srcImg = e.target.files[0];
+            const srcName = inp_chooseImage.value.substring(inp_chooseImage.value.lastIndexOf('\\')+1, inp_chooseImage.value.lastIndexOf('.'));
+
+        //Create a new element to hold the source image
+            const srcImgElmt = document.body.appendChild(document.createElement("img"));
+            srcImgElmt.id = srcName+"_src";
+            srcImgElmt.className = "srcImage"
+            //img.crossorigin = "anonymous";
+            srcImgElmt.src = URL.createObjectURL(srcImg);
+
+        //When source image is loaded, divide it up by the given width and height
+            srcImgElmt.onload = ()=>{
+                const tilesX = srcImgElmt.naturalWidth/sliceIncrX;
+                const tilesY = srcImgElmt.naturalHeight/sliceIncrY;
+                for (let y = 0; y < tilesY; y++) {
+                    for (let x = 0; x < tilesX; x++) {
+                    //Draw canvas containing tile (cropped from main image)
+                        const canvas = document.createElement("canvas");
+                        canvas.width = sliceIncrX;
+                        canvas.height = sliceIncrY;
+                        canvas.getContext("2d").drawImage(srcImgElmt, x*sliceIncrX, y*sliceIncrY, sliceIncrX, sliceIncrY, 0, 0, sliceIncrX, sliceIncrY);
+                    //Create an image element wrapped in an anchor element, allowing the image to be downloaded on mouse click
+                        const anchor = document.body.appendChild(document.createElement("a"));
+                        const tile = anchor.appendChild(document.createElement("img"));
+                        tile.src = canvas.toDataURL();
+                        tile.style.width = sliceIncrX;
+                        tile.style.height = sliceIncrY;
+                        tile.download = srcName + "_"+(y*tilesX+x);
+                        anchor.id = tile.download;
+                        anchor.href = tile.src;
+                        anchor.download = tile.download;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

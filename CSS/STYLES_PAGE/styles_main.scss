@@ -1,0 +1,65 @@
+@import "../_PARTIALS/borders-placeholders",
+        "../_PARTIALS/breakpoints",
+        "../_PARTIALS/colours",
+        "../_PARTIALS/padding";
+
+@import "../_PARTIALS/mix_flex-common-settings",
+        "../_PARTIALS/mix_flex-ultimate";
+
+* {
+    box-sizing: border-box;
+}
+/*Header and general settings*/
+body {
+    width: 90%;
+    margin: auto;
+    background-color: black;
+    color: white;
+}
+a {
+    color: lightskyblue;
+    &:visited {
+        color: darken(darkgoldenrod, 5);
+    }
+}
+header {
+    border: 4px solid $white-chocolate;
+    border-radius: 8px;
+    padding-top: $v-pad_little;
+    padding-bottom: $v-pad_little;
+    background-color: $chocolate;
+    color: $white-chocolate;
+    text-align: center;
+    line-height:1;
+    h1, h2 {
+        margin: 0;
+    }
+}
+
+
+/*Large screen*/
+@media (min-width: $bp-sm) {
+    body {
+        width: 80%;
+    }
+    header {
+        padding-top: $v-pad_some;
+        padding-bottom: $v-pad_some;
+    }
+}
+
+
+.main-nav, .featured-content {
+    border: $ph-border1;
+}
+.flex-container{
+    @include flex-common-wrap;
+    @include flex-variable-basis-static-gutters (1, 0px, 0px);
+    @media (min-width: $bp-lg) {
+        @include flex-variable-basis-static-gutters (1 1, 0px, 0px);
+    }
+}
+.content-block {
+    margin: 0;
+    border: $ph-border2; 
+}

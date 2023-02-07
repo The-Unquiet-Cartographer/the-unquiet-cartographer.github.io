@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel=stylesheet href="CSS/styles.css">
+</head>
+<body>
+
+    <input type="checkbox" id="btn-2WaySwitch"/>
+    <div class="tab" id="tab-obj2map">.OBJ to .MAP</div>
+    <div class="tab" id="tab-map2obj">.MAP to .OBJ</div>
+    <div class="linebreak"></div>
+
+    <div class=ctnr-userVars id=obj2map>
+        <div class=column-l>
+            <div class=elmt-userVars>
+                <label for="inp_obj_scaleFactor">Scale factor:</label>
+                <input type=number id="inp_obj_scaleFactor" value="1"/>
+            </div>
+            <div class=elmt-userVars>
+                <label for="inp_obj_rounding">Round to nearest [x] units:</label>
+                <input type=number id="inp_obj_rounding" value="1"/>
+            </div>
+            <div class=elmt-userVars>
+                <label for="inp_obj_brushThickness">Brush thickness:</label>
+                <input type=number id="inp_obj_brushThickness" value="8"/>
+            </div>
+        </div>
+
+        <div class=column-r>
+            <div class=elmt-userVars>
+                <label for="inp_obj_subdivide">Subdivide 4+ sided faces into triangles:</label>
+                <input type=checkbox id="inp_obj_subdivide" checked/>
+            </div>
+            <div class=elmt-userVars>
+                <label for="inp_obj_invertNormals">Invert face normals:</label>
+                <input type=checkbox id="inp_obj_invertNormals"/>
+            </div>
+            <div class=elmt-userVars>
+                <label for="inp_obj_reverseOrder">Reverse vertex order:</label>
+                <input type=checkbox id="inp_obj_reverseOrder"/>
+            </div>
+        </div>
+
+        <br>
+
+        <label for=inp_obj_fileSelect_obj>Object file (required):</label>
+        <input type=file class=btn_selectFile id=inp_obj_fileSelect_obj accept=".3DO, .obj"/>
+        <br>
+        <label for=inp_obj_fileSelect_obj>Material file (optional):</label>
+        <input type=file class=btn_selectFile id=inp_obj_fileSelect_mtl accept=".mtl"/>
+        <button class=btn_processFile id=btn_obj_processFile>Process file</button>
+        <a class=btn_downloadFile id=btn_obj_downloadFile>Download file</a>
+    </div>
+
+
+    <div class=ctnr-userVars id=map2obj>
+        <div class=column-l>
+            <div class=elmt-userVars>
+                <label for="inp_map_scaleFactor">Scale factor:</label>
+                <input type=number id="inp_map_scaleFactor" value="0.015625"/>
+            </div>
+            <div class=elmt-userVars>
+                <label for="inp_map_rounding">Round to nearest [x] units:</label>
+                <input type=number id="inp_map_rounding" value="0.015625"/>
+            </div>
+            <div class=elmt-userVars>
+                <label for="inp_map_flipYZ">Flip Y/Z coordinates:</label>
+                <input type=checkbox id="inp_map_flipYZ" checked/>
+            </div>
+        </div>
+        <div class=column-r>
+            <div class=elmt-userVars>
+                <label for="inp_map_skipTextures">Textures to skip (separate with spaces):</label>
+                <input type=text id="inp_map_skipTextures" value="notex caulk hint skip trigger clip nodraw origin sky1"/>
+            </div>
+            <div class=elmt-userVars>
+                <span></span>
+            </div>
+        </div>
+
+        <input type=file class=btn_selectFile id=inp_map_fileSelect accept=".map"/>
+        <button class=btn_processFile id=btn_map_processFile>Process file</button>
+        <a class=btn_downloadFile id=btn_map_downloadFile>Download file</a>
+    </div>
+
+
+    <section id=outputField></section>
+
+    <div id=notes-obj2map>
+        <h3>Notes on converting levels from other games:</h3>
+        <table>
+            <tr>
+                <th>GoldenEye 007 / Perfect Dark</th>
+                <td><ul>
+                    <li>Levels can be exported to .OBJ format using the GoldenEye Setup Editor:</li>
+                    <ul>
+                        <li>Start a new project and go to Visual Edit Mode (Edit Setup > Visual Editor).</li>
+                        <li>(Menu Bar >) Mode > Switch Mode to > Edit Room Positions Mode</li>
+                        <li>Right click anywhere in the window > Export Full Level to .obj</li>
+                    </ul>
+                    <li>Recommended Scale Factor varies. See <a href=gepd_scale.html>this page</a> for more details.</li>
+                    <li>Invert Normals = ON; Reverse Vertex Order = OFF</li>
+                </ul></td>  
+            </tr>
+            <tr>
+                <th>Spyro 1,2, & 3</th>
+                <td><ul>
+                    <li>Levels can be converted to .OBJ via scripts included with the Spyro World Viewer.</li>
+                    <li>Recommended Scale Factor is 1.</li>
+                    <li>InvertNormals = ?</li>
+                </ul></td>
+            </tr>
+            <tr>
+                <th>Star Wars Jedi Knight & Mysteries of the Sith</th>
+                <td><ul>
+                    <li>Levels can be exported in .3DO format from the ZED level editor.</li>
+                    <li>Recommended Scale Factor is 320.</li>
+                    <li>Subdivide = ON</li>
+                    <li>Invert Normals = ON; Reverse Vertex Order = ON</li>
+                </ul></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id=notes-map2obj>
+        <h3>Notes:</h3>
+        <ul>
+            <li>For most purposes, you will probably want rounding to be the same as scaleFactor.</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Input scale</th>
+                <th>Output scale</th>
+                <th>ScaleFactor</th>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>1</td>
+                <td>0.015625</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script src="JS/func_utilities.js"></script>
+    <script src="JS/class_Vector3.js"></script>
+    <script src="JS/class_Plane.js"></script>
+    <script src="JS/classes_obj2map_misc.js"></script>
+
+    <script src="JS/obj2map_new/masterInput_obj2map_v6.js"></script>
+    <script src="JS/obj2map/func_process_3do.js"></script>
+    <script src="JS/obj2map/func_process_obj.js"></script>
+    <script src="JS/obj2map/output_mapFile.js"></script>
+
+    <script src="JS/map2obj/masterInput_map2obj.js"></script>
+    <script src="JS/map2obj/func_process_map.js"></script>
+    <script src="JS/map2obj/output_objFile.js"></script>
+
+</body>
+</html>

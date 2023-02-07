@@ -1,0 +1,23 @@
+.file-header {
+  background: #0499ff;
+}
+
+h2 {
+  color: lightskyblue;
+}
+
+.alt > :nth-child(2n+1) {
+  background: lightskyblue;
+}
+
+.alt > :nth-child(2n+2) {
+  background: lightblue;
+}
+
+.weaponTable td {
+  border-color: yellow;
+}
+
+.fHeader-altColor {
+  background: rgb(64, 64, 64);
+}/*# sourceMappingURL=style-PD.css.map */

@@ -1,0 +1,27 @@
+//Include these in your .flex-container
+@mixin flex-common-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    >* {
+        box-sizing: border-box;
+    }
+}
+@mixin flex-common-nowrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    >* {
+        box-sizing: border-box;
+    }
+}
+//Give your .flex-container vertical gutters + padding
+@mixin flex-vertical-padding ($pad-t, $pad-b, $gutter-y_full) {
+    $gutter-y: calc(#{$gutter-y_full} / 2);
+    >* {
+        margin-top: $gutter-y;
+        margin-bottom: $gutter-y;
+    }
+    padding-top: calc(#{$pad-t} - #{$gutter-y});
+    padding-bottom: calc(#{$pad-b} - #{$gutter-y});
+}

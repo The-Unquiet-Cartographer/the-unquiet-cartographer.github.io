@@ -1,0 +1,17 @@
+//Additionally colorise .category elements depending on the rating (.r-#) 
+//r-[1-5]: red = 255, green = [0-255]
+@for $i from 1 through 5 {
+    .r-#{$i} {
+        $red: 255;
+        $grn: $i * 51;
+        background-color: rgba($red, $grn, 0, 0.25);
+    }
+}
+    //r-[6-10]: red = [255-0], green = 255
+@for $i from 6 through 10 {
+    .r-#{$i} {
+        $red: 255 - (($i - 5) * 51);
+        $grn: 255;
+        background-color: rgba($red, $grn, 0, 0.25);
+    }
+}

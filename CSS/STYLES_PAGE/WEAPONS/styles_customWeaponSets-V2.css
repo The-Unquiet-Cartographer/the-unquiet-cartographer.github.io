@@ -1,0 +1,182 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  background: transparent;
+}
+
+body {
+  background: black;
+}
+
+h2, h3, h4, h5 {
+  font-family: "Trebuchet MS", sans-serif;
+  color: white;
+}
+
+li {
+  color: white;
+}
+
+.h-list {
+  margin: 5px 0;
+  padding-left: 25px;
+}
+
+.h-list * {
+  display: inline-block;
+  background: transparent;
+  margin: 0;
+}
+
+.h-list h5 {
+  color: #cc6100;
+}
+
+.h-list li {
+  color: rgb(48, 48, 48);
+}
+
+.h-list li:nth-of-type(1):before {
+  content: "1. ";
+  color: darkred;
+}
+
+.h-list li:nth-of-type(2):before {
+  content: "2. ";
+  color: darkred;
+}
+
+.h-list li:nth-of-type(3):before {
+  content: "3. ";
+  color: darkred;
+}
+
+.h-list li:nth-of-type(4):before {
+  content: "4. ";
+  color: darkred;
+}
+
+.h-list li:nth-of-type(5):before {
+  content: "5. ";
+  color: darkred;
+}
+
+.h-list li:nth-of-type(6):before {
+  content: "6. ";
+  color: darkred;
+}
+
+.h-list li:before {
+  font-weight: bold;
+}
+
+.h-list li:empty {
+  display: none;
+}
+
+.wSet-file {
+  color: white;
+  width: 100%;
+  padding-bottom: 1px;
+  border: 4px solid white;
+  border-radius: 8px;
+}
+.wSet-file h2, .wSet-file h3, .wSet-file h4 {
+  color: white;
+  margin: 0;
+  padding-left: 10px;
+}
+.wSet-file table {
+  width: 100%;
+}
+.wSet-file p:before {
+  content: "•";
+  padding: 0 4px;
+}
+
+.file-header, .file-header-alt {
+  line-height: 1.8em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.weaponTable {
+  text-align: center;
+  table-layout: fixed;
+  overflow: hidden;
+}
+.weaponTable td {
+  border: 1px solid yellow;
+}
+.weaponTable tr > td:nth-of-type(2) {
+  color: #b3b3b3;
+}
+.weaponTable tr > :first-child, .weaponTable tr > :last-child {
+  width: 30px;
+}
+
+.alt > :nth-child(2n+1) {
+  background: lightskyblue;
+}
+.alt > :nth-child(2n+2) {
+  background: lightblue;
+}
+.alt h5:after {
+  content: ":";
+}
+
+.itemTable {
+  table-layout: fixed;
+  overflow-wrap: normal;
+}
+
+.null * {
+  background: transparent !important;
+  color: lightgrey !important;
+}
+.null * td {
+  border: 1px solid grey !important;
+}
+
+.hl-weak {
+  background: #84fb84 !important;
+  color: white !important;
+}
+
+.hl {
+  background: limegreen !important;
+  color: white !important;
+}
+
+.hl-strong {
+  background: green !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.hl-match {
+  background: #ffbf00 !important;
+}
+
+.mark {
+  float: right;
+  height: 25px;
+  width: 25px;
+  margin-top: 2px;
+  margin-right: 15px;
+  border: 2px solid white;
+  box-sizing: border-box;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 24px;
+  font-weight: normal !important;
+}
+.mark:after {
+  content: "✓";
+}
+
+.tick:after {
+  content: "✓";
+  float: right;
+  margin-right: 12px;
+}/*# sourceMappingURL=styles_customWeaponSets-V2.css.map */

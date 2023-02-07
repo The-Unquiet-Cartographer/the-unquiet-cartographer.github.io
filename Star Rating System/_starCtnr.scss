@@ -1,0 +1,23 @@
+// Each star-ctnr holds 5x star icons
+// The ratings can be assigned via class (see _ratings.scss)
+.star-ctnr {
+    display: flex;
+    width: 120px;
+    flex-basis: 120px;
+    height: 20px;
+    justify-content: space-evenly;
+    // Container for star icon variants
+    .img-ctnr {
+        flex-basis: 20px;
+        height: 20px;
+        position: relative;
+        >img {
+            height: 20px;
+            width: 20px;
+            position:absolute;
+            &:not(:first-child) {
+                display: none;
+            }
+        }
+    }
+}

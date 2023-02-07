@@ -1,0 +1,81 @@
+@import 
+    "../../_PARTIALS/colours";
+
+
+body {
+    margin: 0;
+}
+table {
+    td tr:nth-child(3){
+        width: 60px;
+    }
+}
+.ctnr-tags {
+    display:flex;
+    flex-wrap: wrap;
+    height: auto;
+    >*{
+        font-family: 'Trebuchet MS', sans-serif;
+        color: white;
+        text-shadow: black 1px 1px;
+        padding-inline-end: 1px;
+    }
+}
+
+
+
+
+//Game modes
+.ffa::after {
+    content: "FFA";
+    background-color: $green-1;
+}
+//Game modes
+.tdm::after {
+    content: "TDM";
+    background-color: red;
+}
+.duel::after {
+    content:"1v1";
+    background-color: $amber;
+}
+.ctf::after {
+    content:"CTF";
+    background-color: red;
+}
+
+//Layout info
+.deathmatch::after {
+    content: "Deathmatch";
+    background-color: $lighter-grey;
+}
+.symmetric::after {
+    content: "Symmetric";
+    background-color: $lighter-grey;
+}
+.asymmetric::after {
+    content: "Asymmetric";
+    background-color: $lighter-grey;
+}
+.twobase::after {
+    content: "Twobase";
+    background-color: $lighter-grey;
+}
+.long::after {
+    content: "Long";
+    background-color: $lighter-grey;
+}
+.arena::after {
+    content: "Arena";
+    background-color: $lighter-grey;
+}
+.vertical::after {
+    content: "Vertical";
+    background-color: $lighter-grey;
+}
+
+//Misc
+.water::after {
+    content: "Water";
+    background-color: $sea-blue;
+}

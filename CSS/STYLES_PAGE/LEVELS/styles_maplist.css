@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+}
+
+table td tr:nth-child(3) {
+  width: 60px;
+}
+
+.ctnr-tags {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+.ctnr-tags > * {
+  font-family: "Trebuchet MS", sans-serif;
+  color: white;
+  text-shadow: black 1px 1px;
+  -webkit-padding-end: 1px;
+          padding-inline-end: 1px;
+}
+
+.ffa::after {
+  content: "FFA";
+  background-color: #1fcf33;
+}
+
+.tdm::after {
+  content: "TDM";
+  background-color: red;
+}
+
+.duel::after {
+  content: "1v1";
+  background-color: #FFBF00;
+}
+
+.ctf::after {
+  content: "CTF";
+  background-color: red;
+}
+
+.deathmatch::after {
+  content: "Deathmatch";
+  background-color: #b3b3b3;
+}
+
+.symmetric::after {
+  content: "Symmetric";
+  background-color: #b3b3b3;
+}
+
+.asymmetric::after {
+  content: "Asymmetric";
+  background-color: #b3b3b3;
+}
+
+.twobase::after {
+  content: "Twobase";
+  background-color: #b3b3b3;
+}
+
+.long::after {
+  content: "Long";
+  background-color: #b3b3b3;
+}
+
+.arena::after {
+  content: "Arena";
+  background-color: #b3b3b3;
+}
+
+.vertical::after {
+  content: "Vertical";
+  background-color: #b3b3b3;
+}
+
+.water::after {
+  content: "Water";
+  background-color: #006994;
+}/*# sourceMappingURL=styles_maplist.css.map */

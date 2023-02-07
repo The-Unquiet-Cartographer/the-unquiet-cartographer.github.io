@@ -1,0 +1,23 @@
+.file-header {
+  background: olive;
+}
+
+h2 {
+  color: wheat;
+}
+
+.alt > :nth-child(2n+1) {
+  background: wheat;
+}
+
+.alt > :nth-child(2n+2) {
+  background: lightgoldenrodyellow;
+}
+
+.weaponTable td {
+  border-color: darkred;
+}
+
+.fHeader-altColor {
+  background: darkred;
+}/*# sourceMappingURL=style-GEX.css.map */
