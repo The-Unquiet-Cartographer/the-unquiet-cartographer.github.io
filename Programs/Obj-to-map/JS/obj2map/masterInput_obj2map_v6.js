@@ -9,6 +9,7 @@
     const inp_obj_subdivide = document.querySelector('#inp_obj_subdivide');
     const inp_obj_invertNormals = document.querySelector('#inp_obj_invertNormals');
     const inp_obj_reverseOrder = document.querySelector('#inp_obj_reverseOrder');
+    const inp_obj_flipYZ = document.querySelector('#inp_obj_flipYZ');
 
 //SELECT FILE(S)
     const inp_obj_fileSelect_obj = document.querySelector('#inp_obj_fileSelect_obj');
@@ -17,6 +18,33 @@
 //PROCESS & DOWNLOAD
     const btn_obj_processFile = document.querySelector('#btn_obj_processFile');
     const btn_obj_downloadFile = document.querySelector('#btn_obj_downloadFile');
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//MARATHON FIX?
+    const inp_obj_marathonFix = document.querySelector('#inp_obj_marathonFix');
+
+    function Marathon_FaceIsCeiling (thisFace, prevFace) {
+        if (thisFace.vertexArray.length != prevFace.vertexArray.length) return false;
+        for (let i = 0; i < thisFace.vertexArray.length; i++) {
+            if (
+                thisFace.vertexArray[i].x == prevFace.vertexArray[i].x
+                && thisFace.vertexArray[i].z == prevFace.vertexArray[i].z
+                && thisFace.vertexArray[i].y > prevFace.vertexArray[i].y
+            ) continue;
+            else return false;
+        }
+        console.log("Found ceiling");
+        return true;
+    }
+
+    function Marathon_InvertFace (thisFace) {
+        let verts = [];
+        for (let i = thisFace.vertexArray.length-1; i > -1; i--) {
+            verts.push(new Vector3(thisFace.vertexArray[i].x, thisFace.vertexArray[i].y, thisFace.vertexArray[i].z));
+        }
+        return new Face (verts, thisFace.texture);
+    }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,6 +84,7 @@
         const vertexArray = [];
         //const textureVertexArray = [];
         const faceArray = [];
+        if (mtlFile_contents == undefined) mtlFile_contents = "";
 
         switch (objFile_type) {
         //FILETYPE: OBJ
@@ -79,11 +108,15 @@
                     switch(thisLine[0]) {
                     //Vertices
                         case "v":
-                            vertexArray.push(
-                                new Vector3(parseFloat(thisLine[1]), parseFloat(thisLine[2]), parseFloat(thisLine[3]))
+                            let vert = new Vector3
+                                (parseFloat(thisLine[1]), parseFloat(thisLine[2]), parseFloat(thisLine[3]))
                                 .Scale1(inp_obj_scaleFactor.value)
                                 .Round(inp_obj_rounding.value)
-                            );
+                            ;
+                            if (inp_obj_flipYZ.checked) {
+                                vert = new Vector3(vert.x, -vert.z, vert.y);
+                            }
+                            vertexArray.push(vert);
                             break;
                     //Texture Vertices
                         /*case "vt":
@@ -92,11 +125,14 @@
                     //Faces
                         case "f":
                         //Subdivide faces. Only convex faces may be subdivided.
-                            if (inp_obj_subdivide.checked && thisLine.length > 4) for (let j = 2; j < thisLine.length-1; j++) {
-                                faceArray.push(new Face(
-                                    [f_v(thisLine[1]), f_v(thisLine[j]), f_v(thisLine[j+2])],
-                                    mtlArray[_currentMaterial].texture
-                                ));
+                            if (inp_obj_subdivide.checked && thisLine.length > 4)
+                            {   
+                                for (let j = 1; j < thisLine.length-2; j++) {
+                                    faceArray.push(new Face(
+                                        [f_v(thisLine[1]), f_v(thisLine[1+j]), f_v(thisLine[1+j+1])],
+                                        _currentMaterial == undefined ? undefined : mtlArray[_currentMaterial].texture
+                                    ));
+                                }
                             }
                         //Or don't subdivide, I guess.
                             else {
@@ -104,8 +140,15 @@
                                 for (let j = 1; j < thisLine.length; j++) faceVerts.push(f_v(thisLine[j]));
                                 faceArray.push(new Face(
                                     faceVerts,
-                                    mtlArray[_currentMaterial].texture
+                                    _currentMaterial == undefined ? undefined : mtlArray[_currentMaterial].texture
                                 ));
+                            }
+
+                        //Marathon fix?
+                            if (inp_obj_marathonFix.checked === true) {
+                                if (Marathon_FaceIsCeiling(faceArray[faceArray.length-1], faceArray[faceArray.length-2])) {
+                                    faceArray[faceArray.length-1] = Marathon_InvertFace(faceArray[faceArray.length-1]);
+                                }
                             }
                             break;
                     //Using material

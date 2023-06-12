@@ -50,7 +50,7 @@ function Output_mapFile_brushes (_vertArray, _faceArray, _brushThickness, _inver
     //Front and rear
         let brush = `// brush ${f} \r\n \
             { \r\n \
-            ${WriteBrushPlane(brushVerts[0], brushVerts[2], brushVerts[4]), `${face_texture} 0 0 0 1 1`} \r\n\
+            ${WriteBrushPlane(brushVerts[0], brushVerts[2], brushVerts[4], `${face_texture} 0 0 0 1 1`)} \r\n\
             ${WriteBrushPlane(brushVerts[1], brushVerts[5], brushVerts[3])} \r\n\
         `;
     //All sides except last

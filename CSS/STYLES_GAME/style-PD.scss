@@ -1,3 +1,6 @@
-@import "mix_style-game";
+@import "../_PARTIALS/colours",
+        "mix_style-game",
+        "../_PARTIALS/mix_h-lists";
 
 @include style-game($capri, lightskyblue, lightblue, yellow);
+@include h-lists($dark-safety-orange, darkred, white);

@@ -3,9 +3,10 @@
     .h-list {
         margin: 5px 0;
         padding-left:25px;
-        >*{
+        * {
             display: inline-block;
             background: transparent;
+            margin: 0;
             &:not(:first-child){
                 margin-left: $_item-spacing; 
             }
@@ -13,13 +14,27 @@
                 margin-right: $_item-spacing; 
             }
         }
+        h5 {
+            color: $col-header;
+        }
+        li {
+            color: $col-text;
+            :before {
+                font-weight: bold;
+            }
+            :empty {
+                display: none;
+            }
+        }
         @content;
+
     }
 }
 
-@mixin h-list_markers ($number-of-markers) {
+@mixin h-list_markers ($number-of-markers, $col-marker) {
     @for $i from 1 through $number-of-markers {
         .h-list li:nth-of-type(#{$i}):before {
+            color: $col-marker;
             content: "#{$i}. ";
             @content;
         }

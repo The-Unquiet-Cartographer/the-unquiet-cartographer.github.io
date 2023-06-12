@@ -28,6 +28,9 @@
                 <label for="inp_obj_brushThickness">Brush thickness:</label>
                 <input type=number id="inp_obj_brushThickness" value="8"/>
             </div>
+            <div class=elmt-userVars>
+                <!--Space filler-->
+            </div>
         </div>
 
         <div class=column-r>
@@ -42,6 +45,10 @@
             <div class=elmt-userVars>
                 <label for="inp_obj_reverseOrder">Reverse vertex order:</label>
                 <input type=checkbox id="inp_obj_reverseOrder"/>
+            </div>
+            <div class=elmt-userVars>
+                <label for="inp_obj_flipYZ">Flip Y/Z coordinates:</label>
+                <input type=checkbox id="inp_obj_flipYZ"/>
             </div>
         </div>
 
@@ -103,11 +110,12 @@
                         <li>Right click anywhere in the window > Export Full Level to .obj</li>
                     </ul>
                     <li>Recommended Scale Factor varies. See <a href=gepd_scale.html>this page</a> for more details.</li>
-                    <li>Invert Normals = ON; Reverse Vertex Order = OFF</li>
+                    <li>Invert Normals = ON</li>
+                    <li>Reverse Vertex Order = OFF</li>
                 </ul></td>  
             </tr>
             <tr>
-                <th>Spyro 1,2, & 3</th>
+                <th>Spyro 1, 2, & 3</th>
                 <td><ul>
                     <li>Levels can be converted to .OBJ via scripts included with the Spyro World Viewer.</li>
                     <li>Recommended Scale Factor is 1.</li>
@@ -120,7 +128,27 @@
                     <li>Levels can be exported in .3DO format from the ZED level editor.</li>
                     <li>Recommended Scale Factor is 320.</li>
                     <li>Subdivide = ON</li>
-                    <li>Invert Normals = ON; Reverse Vertex Order = ON</li>
+                    <li>Invert Normals = ON</li>
+                    <li>Reverse Vertex Order = ON</li>
+                </ul></td>
+            </tr>
+            <tr>
+                <th>Marathon 1, 2, & &#8734;</th>
+                <td><ul>
+                    <li>Levels can be exported in .OBJ format from the Weland editor.</li>
+                    <ul>
+                        <li>Bizarrely, the floors and walls of the exported model will be facing inside-out, but the ceilings will be normal (Weland 1.4.9).</li>
+                        <li>As such, ceiling brushes will have to be manually raised by the value of brushThickness.</li>
+                        <li>
+                            <label for="inp_obj_marathonFix">Use Marathon Ceiling Fix</label>
+                            <input type=checkbox id="inp_obj_marathonFix"/>
+                        </li>
+                    </ul>
+                    <li>Recommended Scale Factor is 4.</li>
+                    <li>Subdivide = ON</li>
+                    <li>Invert Normals = ON</li>
+                    <li>Reverse Vertex Order = ON</li>
+                    <li>Flip YZ = ON</li>
                 </ul></td>
             </tr>
         </table>
@@ -151,9 +179,10 @@
     <script src="JS/class_Plane.js"></script>
     <script src="JS/classes_obj2map_misc.js"></script>
 
-    <script src="JS/obj2map_new/masterInput_obj2map_v6.js"></script>
+    <script src="JS/obj2map/masterInput_obj2map_v6.js"></script>
+    <!--<script src="JS/obj2map/masterInput_obj2map_v5.js"></script>-->
     <script src="JS/obj2map/func_process_3do.js"></script>
-    <script src="JS/obj2map/func_process_obj.js"></script>
+    <!--<script src="JS/obj2map/func_process_obj.js"></script>-->
     <script src="JS/obj2map/output_mapFile.js"></script>
 
     <script src="JS/map2obj/masterInput_map2obj.js"></script>

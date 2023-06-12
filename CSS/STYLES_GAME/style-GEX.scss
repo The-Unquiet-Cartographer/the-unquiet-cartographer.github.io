@@ -1,3 +1,6 @@
-@import "mix_style-game";
+@import "../_PARTIALS/colours",
+        "mix_style-game",
+        "../_PARTIALS/mix_h-lists";
 
 @include style-game(olive, wheat, lightgoldenrodyellow, darkred, darkred);
+@include h-lists(darkred, wheat, white);

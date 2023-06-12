@@ -1,7 +1,7 @@
 @mixin flex-variable-basis-static-gutters ($ratios, $gutter-size_x: 20px, $gutter-size_y: 20px) {
     $len: length($ratios);
 
-    $tot:0;
+    $tot: 0;
     @each $rat in $ratios {
         $tot: $tot + $rat;
     }
@@ -22,6 +22,7 @@
     }
 }
 
+//Also requires @import _breakpoints.scss
 @mixin static-width-container ($breakpoints: $bp-sm $bp-md $bp-lg, $pseudo-padding: 20px) {
     @each $var in $breakpoints {
         @media (min-width: $var) {

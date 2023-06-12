@@ -3,9 +3,7 @@
 ////////////////////
 
     @import "../../_PARTIALS/colours",
-            "../../_PARTIALS/func_divide-rem",
-            "../../_PARTIALS/mix_h-lists", 
-            "../../_PARTIALS/mix_has-nth";
+            "../../_PARTIALS/mix_h-lists";
 
     $hdr-pad: 10px;
 
@@ -26,7 +24,7 @@
     }
 
 //Horizontal list colors
-    @include h-lists ($dark-safety-orange, darkred, rgb(48, 48, 48));
+    @include h-lists();
 
 
 ////////////////////

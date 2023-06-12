@@ -74,7 +74,7 @@ function ProcessFile_Obj() {
     switch (objFile_type) {
         case ".obj":
             file_contents_split = OBJ_SplitFileContents(objFile_contents);
-            materialArray = MTL_GetMaterialArray(mtlFile_contents);
+            //materialArray = MTL_GetMaterialArray(mtlFile_contents);
 
             vertexArray = OBJ_GetVertexArray(file_contents_split, inp_obj_scaleFactor.value, inp_obj_rounding.value);
             //textureVertexArray = OBJ_GetTextureVertexArray (file_contents_split);

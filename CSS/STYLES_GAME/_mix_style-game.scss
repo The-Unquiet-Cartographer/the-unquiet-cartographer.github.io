@@ -1,8 +1,3 @@
-@import "../_PARTIALS/colours", 
-        "../_PARTIALS/mix_h-lists";
-
-$dark-safety-orange:darken($safety-orange, 10);
-
 @mixin style-game($color-header, $color-1, $color-2, $color-data, $color-headerAlt:rgb(64,64,64)){
 
     .file-header {
