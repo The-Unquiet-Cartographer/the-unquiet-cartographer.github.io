@@ -1,0 +1,120 @@
+/* CLEARFIX */
+/* Add this to the parent container of elements you want to clear. */
+	.clearfix::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+
+/* PAGE STYLES */
+	* {
+		background: black;
+		color: white;
+		font-family: Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+	}
+
+
+/* REVIEW */
+	.review {
+		margin-top: 40px;
+	}
+	.review p {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	.review .verdict {
+		margin-left: 30px;
+		margin-right: 30px;
+		font-weight: bold;
+	}
+
+
+/* MAP INFO */
+	.mapinfo .filename,
+	.mapinfo .levelname,
+	.mapinfo .author {
+		display: inline-block;
+		width: fit-content;
+		margin: 5px;
+	}
+	.mapinfo .filename::before,
+	.mapinfo .levelname::before,
+	.mapinfo .author::before {
+		display: inline-block;
+		width: 110px;
+		margin-right: 15px;
+		text-align: center;
+	}
+	.mapinfo .filename::before {content:"Filename:";}
+	.mapinfo .levelname::before {content:"Level Name:";}
+	.mapinfo .author::before {content:"Author:";}
+
+
+/* REVIEW SCORES */
+/*
+	Go from 0-5 stars, with half-stars in-between.
+	Will use the following Unicode symbols: ☆ ✮ ★
+	Categories should go in the following order: Layout, Construction, Aesthetics, Entities, Overall, Personal.
+	Overall and Personal should be the fifth and sixth categories respectively.
+	Overall should be given a mean score of Layout, Construction, Aesthetics, and Entities.
+	Personal is my subjective enjoyment of the level, divorced from its "objective" qualities.
+*/
+	.score .layout,
+	.score .construction,
+	.score .aesthetics,
+	.score .entities,
+	.score .overall,
+	.score .personal {
+		display: inline-block;
+		width: fit-content;
+		margin: 5px;
+	}
+	.score .layout::before,
+	.score .construction::before,
+	.score .aesthetics::before,
+	.score .entities::before,
+	.score .overall::before,
+	.score .personal::before {
+		display: inline-block;
+		width: 100px;
+		margin-right: 15px;
+		text-align: center;
+	}
+	.score .layout::after,
+	.score .construction::after,
+	.score .aesthetics::after,
+	.score .entities::after,
+	.score .overall::after,
+	.score .personal::after {
+		display: inline-block;
+		width: 67px;
+		text-align: center;
+	}
+	.score .layout::before			{content:"Layout:";}
+	.score .construction::before	{content:"Construction:";}
+	.score .aesthetics::before		{content:"Aesthetics:";}
+	.score .entities::before		{content:"Entities:";}
+	.score .overall::before			{content:"Overall:"; font-weight: bold;}
+	.score .personal::before		{content:"Personal:"; font-weight: bold;}
+
+	.score .s0::after		{content:"☆☆☆☆☆"; color: rgba(255, 0, 0, 1);}
+	.score .s05::after		{content:"✮☆☆☆☆"; color: rgba(255, 51, 0, 1);}
+	.score .s1::after		{content:"★☆☆☆☆"; color: rgba(255, 102, 0, 1);}
+	.score .s15::after		{content:"★✮☆☆☆"; color: rgba(255, 153, 0, 1);}
+	.score .s2::after		{content:"★★☆☆☆"; color: rgba(255, 204, 0, 1);}
+	.score .s25::after		{content:"★★✮☆☆"; color: rgba(255, 255, 0, 1);}
+	.score .s3::after		{content:"★★★☆☆"; color: rgba(204, 255, 0, 1);}
+	.score .s35::after		{content:"★★★✮☆"; color: rgba(153, 255, 0, 1);}
+	.score .s4::after		{content:"★★★★☆"; color: rgba(102, 255, 0, 1);}
+	.score .s45::after		{content:"★★★★✮"; color: rgba(51, 255, 0, 1);}
+	.score .s5::after		{content:"★★★★★"; color: rgba(0, 255, 0, 1);}
+
+	.verdict {font-weight: bold;}
+	.v0 {content:"Delete.";}
+	.v1 {content:"REALLY not worth it.";}
+	.v2 {content:"Not worth it.";}
+	.v3 {content:"Worth playing.";}
+	.v4 {content:"Worth keeping.";}
+	.v5 {content:"Must-have.";}
+	.v9 {content:"A curiosity.";}
