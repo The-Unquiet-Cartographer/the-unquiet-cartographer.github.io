@@ -1,0 +1,22 @@
+/* MAP INFO */
+	.mapinfo .filename-zip,
+	.mapinfo .filename-goo,
+	.mapinfo .jk-episode,
+	.mapinfo .mots-episode {
+		display: inline-block;
+		width: fit-content;
+		margin: 5px;
+	}
+	.mapinfo .filename-zip::before,
+	.mapinfo .filename-goo::before,
+	.mapinfo .jk-episode::before,
+	.mapinfo .mots-episode::before {
+		display: inline-block;
+		width: 110px;
+		margin-right: 15px;
+		text-align: center;
+	}
+	.mapinfo .filename-zip::before {content:"Filename (.zip):";}
+	.mapinfo .filename-goo::before {content:"Filename (.goo):";}
+	.mapinfo .jk-episode::before {content:"Episode:";}
+	.mapinfo .mots-episode::before {content:"Episode:";}
